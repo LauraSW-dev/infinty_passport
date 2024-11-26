@@ -1,0 +1,7 @@
+<h1>Bookings</h1>
+<% @bookings.each do |booking| %>
+  <%= booking.user.email %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+  <a href="<%= booking_path(booking) %>" class="btn btn-primary" >view booking</a>
+<% end %>
