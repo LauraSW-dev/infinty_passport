@@ -1,4 +1,4 @@
 class Passport < ApplicationRecord
   has_many :bookings
-  belongs_to :users
+  belongs_to :user, dependent: :destroy
 end
