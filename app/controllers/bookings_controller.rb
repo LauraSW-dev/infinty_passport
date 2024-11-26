@@ -4,17 +4,28 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def show
+    @passport = Passport.find_by(id: params[:passport_id])  # Find passport by passport_id
+    if @passport
+      @booking = @passport.bookings.find(params[:id])  # Now you can safely access bookings
+    else
+      # If the passport is not found, handle the error appropriately
+      redirect_to passports_path, alert: 'Passport not found.'
+    end
+  end
+
   def new
     @passport = Passport.find(params[:passport_id])
     @booking = Booking.new
   end
+
     def create
       @passport = Passport.find(params[:passport_id])
       @booking = @passport.bookings.new(booking_params)
       @booking.user = current_user
 
       if @booking.save
-        redirect_to passport_path(@passport), notice: 'Booking successfully created'
+        redirect_to bookings_path, notice: 'Booking successfully created'
       else
         render :new, status: :unprocessable_entity
       end
@@ -41,6 +52,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

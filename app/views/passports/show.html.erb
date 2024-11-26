@@ -3,7 +3,7 @@
 <%= @passport.description%>
 <%= @passport.price %>
 
-<%= simple_form_for @booking do |f| %>
+<%= simple_form_for [@passport, @passport.bookings.new] do |f| %>
   <div>
     <%= f.input :start_date, as: :date %>
   </div>
