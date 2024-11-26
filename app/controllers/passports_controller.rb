@@ -6,6 +6,7 @@ class PassportsController < ApplicationController
 
   def show
     @passport = Passport.find(params[:id])
+    @booking = @passport.bookings.new
   end
 
   def new
@@ -38,6 +39,6 @@ class PassportsController < ApplicationController
   private
 
   def passport_params
-    params.require(:passport).permit(:title, :description, :price)
+    params.require(:passport).permit(:title, :description, :price, photos: [])
   end
 end
