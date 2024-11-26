@@ -1,0 +1,5 @@
+<h1>Passport index</h1>
+<% @passports.each do |passport| %>
+  <%= passport.title %>
+  <a href="<%= passport_path(passport) %>" class="btn btn-primary" >show more</a>
+<% end %>
