@@ -24,7 +24,7 @@ class PassportsController < ApplicationController
 
   private
 
-  def Passport_params
-    params.require(:passport).permit(:title, :description, :price, :photos)
+  def passport_params
+    params.require(:passport).permit(:title, :description, :price, photos: [])
   end
 end
