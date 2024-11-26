@@ -5,6 +5,7 @@ class PassportsController < ApplicationController
 
   def show
     @passport = Passport.find(params[:id])
+    @booking = @passport.bookings.new
   end
 
   def new

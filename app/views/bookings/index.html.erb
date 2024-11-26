@@ -1,5 +1,6 @@
 <h1>Bookings</h1>
 <% @bookings.each do |booking| %>
-  <%= booking.user_id %>
-  <a href="<%= booking_path(booking) %>" class="btn btn-primary" >show more</a>
+  <%= booking.user %>
+  <%= booking.passport %>
+  <a href="<%= booking_path(booking) %>" class="btn btn-primary" ></a>
 <% end %>
