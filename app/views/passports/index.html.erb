@@ -2,4 +2,5 @@
 <% @passports.each do |passport| %>
   <%= passport.title %>
   <a href="<%= passport_path(passport) %>" class="btn btn-primary" >show more</a>
+  <a href="<%= new_passport_path(passport) %>" class="btn btn-primary" >create a new passport</a>
 <% end %>

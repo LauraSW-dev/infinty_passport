@@ -1,0 +1,14 @@
+<%= simple_form_for(@passport) do |f| %>
+  <div class="form-group">
+    <%= f.input :title, label: "Passport Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, label: "Description" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :price, label: "Price" %>
+  </div>
+  <div class="form-group">
+    <%= f.button :submit, "Save Passport", class: "btn btn-primary" %>
+  </div>
+<% end %>
