@@ -1,4 +1,5 @@
 class PassportsController < ApplicationController
+
   def index
     @passports = Passport.all
   end
@@ -13,6 +14,7 @@ class PassportsController < ApplicationController
 
   def create
     @passport = Passport.new(passport_params)
+    @passport.user = current_user
     if @passport.save
       redirect_to @passport, notice: 'Passport created successfully.'
     else
@@ -22,7 +24,7 @@ class PassportsController < ApplicationController
 
   private
 
-  def Passport_params
+  def passport_params
     params.require(:passport).permit(:title, :description, :price)
   end
 end

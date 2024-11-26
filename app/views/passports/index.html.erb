@@ -1,5 +1,13 @@
-<h1>Passport index</h1>
-<% @passports.each do |passport| %>
-  <%= passport.title %>
-  <a href="<%= passport_path(passport) %>" class="btn btn-primary" >show more</a>
-<% end %>
+<div class="container">
+  <h1>Passport index</h1>
+
+  <div class="card">
+    <% @passports.each do |passport| %>
+      <%= passport.title %>
+      <a href="<%= passport_path(passport) %>" class="btn btn-primary" >show more</a>
+      <a href="<%= new_passport_path(passport) %>" class="btn btn-primary" >create new passport</a>
+    <% end %>
+  </div>
+</div>
+
+<%# <%= f.button :submit, "Save Passport", class: "btn btn-primary" %> %>
