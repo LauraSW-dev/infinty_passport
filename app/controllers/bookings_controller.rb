@@ -26,3 +26,4 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:status)
   end
 end
+
