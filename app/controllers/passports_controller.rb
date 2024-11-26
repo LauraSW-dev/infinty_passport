@@ -22,6 +22,19 @@ class PassportsController < ApplicationController
     end
   end
 
+  def edit
+    @passport = Passport.find(params[:id])
+  end
+
+  def update
+    @passport = Passport.find(params[:id])
+    if @passport.update(passport_params)
+      redirect_to @passport, notice: 'Passport updated successfully.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def passport_params
