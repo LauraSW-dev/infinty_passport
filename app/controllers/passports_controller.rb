@@ -1,4 +1,5 @@
 class PassportsController < ApplicationController
+
   def index
     @passports = Passport.all
   end
@@ -14,6 +15,7 @@ class PassportsController < ApplicationController
 
   def create
     @passport = Passport.new(passport_params)
+    @passport.user = current_user
     if @passport.save
       redirect_to @passport, notice: 'Passport created successfully.'
     else
@@ -21,9 +23,22 @@ class PassportsController < ApplicationController
     end
   end
 
+  def edit
+    @passport = Passport.find(params[:id])
+  end
+
+  def update
+    @passport = Passport.find(params[:id])
+    if @passport.update(passport_params)
+      redirect_to @passport, notice: 'Passport updated successfully.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
-  def Passport_params
-    params.require(:passport).permit(:title, :description, :price)
+  def passport_params
+    params.require(:passport).permit(:title, :description, :price, photos: [])
   end
 end

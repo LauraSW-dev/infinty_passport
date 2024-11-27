@@ -1,5 +1,20 @@
-<h1>Passport index</h1>
-<% @passports.each do |passport| %>
-  <%= passport.title %>
-  <a href="<%= passport_path(passport) %>" class="btn btn-primary" >show more</a>
-<% end %>
+<div class="container my-4">
+  <h1 class="text-center mb-4">Passport Index</h1>
+
+  <div class="row">
+    <% @passports.each do |passport| %>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h4 class="card-title"><%= passport.title %></h4>
+            <a href="<%= passport_path(passport) %>" class="btn btn-primary">Show More</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="<%= new_passport_path %>" class="btn btn-success">Create New Passport</a>
+  </div>
+</div>
