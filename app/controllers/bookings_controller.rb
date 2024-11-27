@@ -51,6 +51,23 @@ class BookingsController < ApplicationController
     redirect_to passport_bookings_path(@passport), notice: 'Booking deleted successfully.'
   end
 
+  def approve
+    @booking = @passport.bookings.find(param[:id])
+    @booking.approve!
+    respond_to do |format|
+      format.html { redirect_to passport_path(@booking.passport), notice: "Booking approved!"}
+      format.json
+    end
+  end
+
+  def reject
+    @booking = @passport.bookings.find(param[:id])
+    @booking.rejected!
+    respond_to do |format|
+      format.html {redirect_to passport_path(@booking.passport), notice: "Booking has been rejected!"}
+      format.json
+    end
+  end
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
