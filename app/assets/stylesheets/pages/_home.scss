@@ -1,1 +1,177 @@
-// Specific CSS for your home-page
+
+body {
+  background: #99B4BF;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+
+.container {
+  background-color: #99B4BF;
+  padding: 40px;
+  border-radius: 15px;
+
+  width: 80%;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+
+
+  }
+
+
+
+.btn-primary {
+  border-radius: 50px;
+  background-color: #3498db;
+  color: rgb(211, 211, 211);
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  &:hover {
+    background-color: #2980b9;
+    transform: translateY(-6px) scale(1.1) rotate(-5deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
+
+  &:active {
+    background-color: #1f618d;
+    color: #f39c12;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulse 1s ease-in-out infinite;
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.title-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-shadow: 0 0 10px #60384e, 0 0 20px #ff79c6, 0 0 30px #ff79c6;
+  animation: glow 1.5s ease-in-out infinite alternate;
+
+  &:hover {
+    color: #f39c12;
+    text-shadow: 0 0 15px #f39c12, 0 0 30px #f39c12, 0 0 45px #f39c12;
+  }
+}
+
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #2D4B73, 0 0 20px #642649, 0 0 30px #4d1f39;
+    color: #fff;
+  }
+  100% {
+    text-shadow: 0 0 20px #602a48, 0 0 40px #2D4B73, 0 0 60px #511f3c;
+    color: #4a6a93;
+  }
+}
+
+
+.text-centertitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-top: -10px;
+  padding: 0 20px;
+  align-items: flex-start;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.btn-success{
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+  &:hover {
+    background-color: #218838;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+
+
+    color: transparent;
+  }
+
+
+  &::after {
+    content: "Make a new passport";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #e5e5e3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.card{
+  
+}

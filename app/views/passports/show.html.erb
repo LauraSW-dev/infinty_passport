@@ -1,6 +1,6 @@
 
 <div class="container my-5">
-  <div class="card shadow-sm">
+  <div class="card shadow-sm" id="card-show">
     <div class="card-body">
       <h3 class="card-title">Your New Passport: <span class="text-primary">"<%= @passport.title %>"</span></h3>
       <p class="card-text">
@@ -45,4 +45,3 @@
 <% @passport.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
-
