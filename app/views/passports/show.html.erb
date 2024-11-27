@@ -3,13 +3,17 @@
 <%= @passport.description%>
 <%= @passport.price %>
 
-<%= simple_form_for [@passport, @passport.bookings.new] do |f| %>
+<%= simple_form_for ([@passport, @passport.bookings.new]) do |f| %>
   <div>
-    <%= f.input :start_date, as: :date %>
+    <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
   </div>
 
   <div>
-    <%= f.input :end_date, as: :date %>
+    <%= f.input :end_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
   </div>
 
   <div>
