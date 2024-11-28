@@ -1,6 +1,6 @@
 body {
   background: #99B4BF;
-  font-family: 'Poppins', sans-serif; /* Fancy, modern font */
+  font-family: 'Poppins', sans-serif;
   color: #333;
   margin: 0;
   padding: 0;
@@ -30,20 +30,20 @@ body {
   transition: all 0.5s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
-  font-family: 'Poppins', sans-serif; /* Modern font for the button */
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
-  overflow: hidden; /* To prevent glow effect from going outside the button's borders */
+  overflow: hidden;
 
   &:hover {
     background-color: #2980b9;
     transform: translateY(-8px) scale(1.15) rotate(-5deg);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     color: #fff;
-    text-shadow: 0 0 15px #5fa7c5, 0 0 30px #5fa7c5, 0 0 45px #5fa7c5; /* Lighter blue neon glow */
+    text-shadow: 0 0 15px #5fa7c5, 0 0 30px #5fa7c5, 0 0 45px #5fa7c5;
   }
 
   &:active {
-    background-color: #5fa7c5; /* Lighter blue for active state */
+    background-color: #5fa7c5;
     color:#6fc0e3 ;
     transform: translateY(2px) scale(0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -54,7 +54,7 @@ body {
     animation: pulse 5s ease-in-out infinite;
   }
 
-  /* Adding a more stylish 3D button effect */
+
   &:before {
     content: "";
     position: absolute;
@@ -68,7 +68,7 @@ body {
     animation: pulseGlow 1.5s infinite;
   }
 
-  /* Pulse animation for glowing */
+
   @keyframes pulseGlow {
     0% {
       transform: translate(-50%, -50%) scale(0);
@@ -105,13 +105,13 @@ body {
   letter-spacing: 5px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  text-shadow: 0 0 25px #5fa7c5, 0 0 50px #5fa7c5, 0 0 75px #5fa7c5, 0 0 100px #5fa7c5; /* Lighter blue glowing effect */
+  text-shadow: 0 0 25px #5fa7c5, 0 0 50px #5fa7c5, 0 0 75px #5fa7c5, 0 0 100px #5fa7c5;
   animation: fancyGlow 2s ease-in-out infinite alternate;
   transition: all 0.4s ease-in-out;
 
   &:hover {
     color: #f39c12;
-    text-shadow: 0 0 25px #f39c12, 0 0 50px #f39c12, 0 0 75px #f39c12; /* Bright yellow hover effect */
+    text-shadow: 0 0 25px #f39c12, 0 0 50px #f39c12, 0 0 75px #f39c12;
   }
 }
 
@@ -164,11 +164,11 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background-color: #5fa7c5; /* Lighter blue for hover state */
+    background-color: #5fa7c5;
     transform: translateY(-4px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     color: transparent;
-    text-shadow: 0 0 15px #5fa7c5, 0 0 30px #5fa7c5; /* Neon yellow text shadow */
+    text-shadow: 0 0 15px #5fa7c5, 0 0 30px #5fa7c5;
   }
 
   &::after {

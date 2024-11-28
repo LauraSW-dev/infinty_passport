@@ -1,20 +1,15 @@
-<h1>Bookings</h1>
+
 <% @bookings.each do |booking| %>
-<div class="card">
   <%= booking.user.email %>
   <%= booking.passport.title %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
-
+  <%= booking.status %>
   <% if booking.status == "pending" %>
   <%= button_to "Approve", approve_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-success" %>
   <%= button_to "Reject", reject_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-danger" %>
 
     <% else %>
       <span class="badge" <%= booking.status == 'approved' ? 'badge-success' : 'badge-danger' %>>
-        <%# <%= booking.status.capitalize %> %>
+        <%= booking.status.capitalize %>
       </span>
     <% end %>
-</div>
-
 <% end %>
