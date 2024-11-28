@@ -1,7 +1,8 @@
 class PassportsController < ApplicationController
 
   def index
-
+    @passport = Passport.all
+    
     @passports = Passport.geocoded
     @markers = @passports.map do |passport|
       {
