@@ -117,12 +117,12 @@ body {
 
 @keyframes fancyGlow {
   0% {
-    text-shadow: 0 0 10px #000000, 0 0 20px #5fa7c5, 0 0 30px #2D4B73;
+    text-shadow: 0 0 10px #4AD97C, 0 0 20px #4AD97C, 0 0 30px #4AD97C;
     color: #fff;
   }
   100% {
-    text-shadow: 0 0 20px #82d5f9, 0 0 40px #5fa7c5, 0 0 60px #f39c12;
-    color: #4a6a93;
+    text-shadow: 0 0 20px #4AD97C, 0 0 40px #4AD97C, 0 0 60px #f39c12;
+    color: #2e7d4a;
   }
 }
 
@@ -201,4 +201,27 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
+}
+
+#buttonsearch {
+  position: absolute;
+  bottom: 230px;
+  margin-left: 1080px;
+  width: 400px;
+
+  font-size: 9px;
+  padding: 2px;
+
+
+}
+
+#passports{
+  position: absolute;
+  // bottom: 220px;
+  // margin-left: 1020px;
+  // width: 400px;
+
+
+
+
 }
