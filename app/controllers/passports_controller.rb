@@ -2,6 +2,25 @@ class PassportsController < ApplicationController
 
   def index
     @passports = Passport.all
+
+    # The `geocoded` scope filters only passports with coordinates
+    @markers = @passports.geocoded.map do |passport|
+      {
+        lat: passport.latitude,
+        lng: passport.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {passport: passport})
+      }
+    end
+
+    # @passports = Passport.geocoded
+    # @markers = @passports.map do |passport|
+    #   {
+    #     lat: passport.latitude,
+    #     lng: passport.longitude,
+    #     info_window_html: render_to_string(partial: "info_window", locals: {passport: passport}),
+    #     marker_html: render_to_string(partial: "marker")
+    #   }
+    # end
   end
 
   def show

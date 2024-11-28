@@ -5,6 +5,7 @@
   <%= booking.passport.title %>
   <%= booking.start_date %>
   <%= booking.end_date %>
+
   <% if booking.status == "pending" %>
   <%= button_to "Approve", approve_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-success" %>
   <%= button_to "Reject", reject_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-danger" %>
