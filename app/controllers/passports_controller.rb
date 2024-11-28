@@ -2,6 +2,12 @@ class PassportsController < ApplicationController
 
   def index
     @passports = Passport.all
+    if params[:query].present?
+      sql_subquery = "title ILIKE :query OR description ILIKE :query"
+      @passports = @passports.where(sql_subquery, query: "%#{params[:query]}%")
+    end
+
+
 
     # The `geocoded` scope filters only passports with coordinates
     @markers = @passports.geocoded.map do |passport|

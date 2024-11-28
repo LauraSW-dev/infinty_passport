@@ -1,1 +1,227 @@
-// Specific CSS for your home-page
+body {
+  background: #99B4BF;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #99B4BF;
+  padding: 40px;
+  border-radius: 15px;
+  width: 80%;
+  text-align: center;
+  position: relative;
+  transition: transform 0.8s ease-in-out;
+}
+
+.btn-primary {
+  border-radius: 50px;
+  background-color: #2D4B73;
+  color: rgb(211, 211, 211);
+  padding: 12px 24px;
+  border: none;
+  font-size: 18px;
+  cursor: grabbing;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  overflow: hidden;
+
+  &:hover {
+    background-color: #2980b9;
+    transform: translateY(-8px) scale(1.15) rotate(-5deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-shadow: 0 0 15px #5fa7c5, 0 0 30px #5fa7c5, 0 0 45px #5fa7c5;
+  }
+
+  &:active {
+    background-color: #5fa7c5;
+    color:#6fc0e3 ;
+    transform: translateY(2px) scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulse 5s ease-in-out infinite;
+  }
+
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: pulseGlow 1.5s infinite;
+  }
+
+
+  @keyframes pulseGlow {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.2;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0.6;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.title-header {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  text-shadow: 0 0 25px #5fa7c5, 0 0 50px #5fa7c5, 0 0 75px #5fa7c5, 0 0 100px #5fa7c5;
+  animation: fancyGlow 2s ease-in-out infinite alternate;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    color: #f39c12;
+    text-shadow: 0 0 25px #f39c12, 0 0 50px #f39c12, 0 0 75px #f39c12;
+  }
+}
+
+@keyframes fancyGlow {
+  0% {
+    text-shadow: 0 0 10px #4AD97C, 0 0 20px #4AD97C, 0 0 30px #4AD97C;
+    color: #fff;
+  }
+  100% {
+    text-shadow: 0 0 20px #4AD97C, 0 0 40px #4AD97C, 0 0 60px #f39c12;
+    color: #2e7d4a;
+  }
+}
+
+.text-centertitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-top: -10px;
+  padding: 0 20px;
+  align-items: flex-start;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn-success {
+  position: relative;
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 18px;
+  background-color: #476489;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: #5fa7c5;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    color: transparent;
+    text-shadow: 0 0 15px #5fa7c5, 0 0 30px #5fa7c5;
+  }
+
+  &::after {
+    content: "Make a new passport";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: #e5e5e3;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+#buttonsearch {
+  position: absolute;
+  bottom: 230px;
+  margin-left: 1080px;
+  width: 400px;
+
+  font-size: 9px;
+  padding: 2px;
+
+
+}
+
+#passports{
+  position: absolute;
+  // bottom: 220px;
+  // margin-left: 1020px;
+  // width: 400px;
+
+
+
+
+}
