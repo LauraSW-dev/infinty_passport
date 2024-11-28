@@ -1,63 +1,89 @@
-
 body {
   background: #99B4BF;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Fancy, modern font */
   color: #333;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
 
-
 .container {
   background-color: #99B4BF;
   padding: 40px;
   border-radius: 15px;
-
   width: 80%;
   text-align: center;
   position: relative;
-  transition: transform 0.3s ease-in-out;
-
-
-  }
-
-
+  transition: transform 0.8s ease-in-out;
+}
 
 .btn-primary {
   border-radius: 50px;
-  background-color: #3498db;
+  background-color: #2D4B73;
   color: rgb(211, 211, 211);
   padding: 12px 24px;
   border: none;
-  font-size: 16px;
-  cursor: pointer;
+  font-size: 18px;
+  cursor: grabbing;
   text-transform: uppercase;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+  font-family: 'Poppins', sans-serif; /* Modern font for the button */
+  letter-spacing: 1px;
+  overflow: hidden; /* To prevent glow effect from going outside the button's borders */
 
   &:hover {
     background-color: #2980b9;
-    transform: translateY(-6px) scale(1.1) rotate(-5deg);
+    transform: translateY(-8px) scale(1.15) rotate(-5deg);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     color: #fff;
+    text-shadow: 0 0 15px #5fa7c5, 0 0 30px #5fa7c5, 0 0 45px #5fa7c5; /* Lighter blue neon glow */
   }
 
   &:active {
-    background-color: #1f618d;
-    color: #f39c12;
-    transform: translateY(2px);
+    background-color: #5fa7c5; /* Lighter blue for active state */
+    color:#6fc0e3 ;
+    transform: translateY(2px) scale(0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   &:focus {
     outline: none;
-    animation: pulse 1s ease-in-out infinite;
+    animation: pulse 5s ease-in-out infinite;
+  }
+
+  /* Adding a more stylish 3D button effect */
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: pulseGlow 1.5s infinite;
+  }
+
+  /* Pulse animation for glowing */
+  @keyframes pulseGlow {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.2;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0.6;
+    }
   }
 }
-
 
 @keyframes pulse {
   0% {
@@ -71,36 +97,34 @@ body {
   }
 }
 
-
 .title-header {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 900;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 5px;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
-  text-shadow: 0 0 10px #60384e, 0 0 20px #ff79c6, 0 0 30px #ff79c6;
-  animation: glow 1.5s ease-in-out infinite alternate;
+  text-shadow: 0 0 25px #5fa7c5, 0 0 50px #5fa7c5, 0 0 75px #5fa7c5, 0 0 100px #5fa7c5; /* Lighter blue glowing effect */
+  animation: fancyGlow 2s ease-in-out infinite alternate;
+  transition: all 0.4s ease-in-out;
 
   &:hover {
     color: #f39c12;
-    text-shadow: 0 0 15px #f39c12, 0 0 30px #f39c12, 0 0 45px #f39c12;
+    text-shadow: 0 0 25px #f39c12, 0 0 50px #f39c12, 0 0 75px #f39c12; /* Bright yellow hover effect */
   }
 }
 
-
-@keyframes glow {
+@keyframes fancyGlow {
   0% {
-    text-shadow: 0 0 10px #2D4B73, 0 0 20px #642649, 0 0 30px #4d1f39;
+    text-shadow: 0 0 10px #000000, 0 0 20px #5fa7c5, 0 0 30px #2D4B73;
     color: #fff;
   }
   100% {
-    text-shadow: 0 0 20px #602a48, 0 0 40px #2D4B73, 0 0 60px #511f3c;
+    text-shadow: 0 0 20px #82d5f9, 0 0 40px #5fa7c5, 0 0 60px #f39c12;
     color: #4a6a93;
   }
 }
-
 
 .text-centertitle {
   display: flex;
@@ -114,7 +138,6 @@ body {
   animation: fadeIn 1s ease-out;
 }
 
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -123,12 +146,13 @@ body {
     opacity: 1;
   }
 }
-.btn-success{
+
+.btn-success {
   position: relative;
   display: inline-block;
-  padding: 12px 24px;
-  font-size: 16px;
-  background-color: #28a745;
+  padding: 14px 28px;
+  font-size: 18px;
+  background-color: #476489;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -137,20 +161,15 @@ body {
   cursor: pointer;
   overflow: hidden;
   transition: background-color 0.3s ease, transform 0.3s ease;
-
-
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-
   &:hover {
-    background-color: #218838;
+    background-color: #5fa7c5; /* Lighter blue for hover state */
     transform: translateY(-4px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-
-
     color: transparent;
+    text-shadow: 0 0 15px #5fa7c5, 0 0 30px #5fa7c5; /* Neon yellow text shadow */
   }
-
 
   &::after {
     content: "Make a new passport";
@@ -158,20 +177,28 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     color: #e5e5e3;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.1s ease;
     pointer-events: none;
   }
-
 
   &:hover::after {
     opacity: 1;
   }
 }
 
-.card{
-  
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
 }
