@@ -25,9 +25,9 @@
           <td>
             <%= booking.end_date %>
           </td>
-          <td>
+          <td class="d-flex">
             <% if booking.status == "pending" %>
-              <%= button_to "Approve", approve_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-success" %>
+              <%= button_to "Approve", approve_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-success mx-2" %>
               <%= button_to "Reject", reject_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-danger" %>
             <% else %>
               <span class="badge" <%= booking.status == 'approved' ? 'badge-success' : 'badge-danger' %>>
@@ -40,6 +40,6 @@
     </table>
   </div>
 <% end %>
-<div class="container">
+<div class="container my-5">
   <%= link_to "Book a passport", new_passport_booking_path, class:"btn btn-primary" %>
 </div>
