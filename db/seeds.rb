@@ -9,7 +9,6 @@
 #   end
 # db/seeds.rb
 
-1. Clean the database 🗑️
 puts "Cleaning database..."
 Booking.destroy_all
 User.destroy_all

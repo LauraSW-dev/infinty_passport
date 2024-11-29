@@ -1,16 +1,13 @@
 body {
-  background-image: url("https://plus.unsplash.com/premium_photo-1661962432490-6188a6420a81?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  overflow-x: hidden;
-  /* Disables horizontal scrolling */
-  overflow-y: auto;
-  /* Allows vertical scrolling */
-  text-align: center;
-  /* Centers text */
+  background-image: url("https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover; /* Ensures the background covers the entire screen */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  min-height: 100vh; /* Ensures the body always takes up at least the full viewport height */
+  overflow-x: hidden; /* Disables horizontal scrolling */
+  overflow-y: auto; /* Allows vertical scrolling */
+  text-align: center; /* Centers text */
   font-size: 20px;
   color: aliceblue;
   text-shadow: 1px 1px 3px rgba(20, 76, 230, 0.7);
@@ -19,6 +16,7 @@ body {
   flex-direction: column;
   /* Centers content vertically if needed */
 }
+
 
 /* Keeping .background-blur styles as is */
 .background-blur {
