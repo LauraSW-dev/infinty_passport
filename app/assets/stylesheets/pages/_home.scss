@@ -1,17 +1,15 @@
 body {
-  background: #99B4BF;
+  background: #fff;
   font-family: 'Poppins', sans-serif;
-  color: #333;
+  color: #000;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
 
-.container {
-  background-color: #99B4BF;
+.main-container {
   padding: 40px;
-  margin: 0;
-  border-radius: 15px;
+  border-radius: 16px;
   width: 80%;
   text-align: center;
   position: relative;
@@ -19,7 +17,7 @@ body {
 }
 
 .btn-primary {
-  border-radius: 50px;
+  border-radius: 40px;
   background-color: #2D4B73;
   color: rgb(211, 211, 211);
   padding: 12px 24px;
@@ -472,7 +470,7 @@ body {
   grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
  /* Adjusts spacing between cards */
    /* Ensures it uses the full width */
-  height: auto; /* Adjust height based on content */
+  height: 30px; /* Adjust height based on content */
 
 }
 
@@ -549,5 +547,7 @@ a {
   color: inherit; /* Ensure the link color matches the button color */
 }
 
-
-
+.cards-map{
+  display: flex;
+  justify-content: center;
+}
