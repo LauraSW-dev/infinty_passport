@@ -1,35 +1,43 @@
 body {
-  background: #99B4BF;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  margin: 0;
-  padding: 0;
+  background-image: url("https://plus.unsplash.com/premium_photo-1661962432490-6188a6420a81?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  font-size: 20px;
+  color: aliceblue;
+  text-shadow: 1px 1px 3px rgba(20, 76, 230, 0.7);
+  justify-content: center;
+  flex-direction: column;
 }
 
-.container {
-  background-color: #99B4BF;
-  padding: 40px;
-  margin: 0;
-  border-radius: 15px;
-  width: 80%;
-  text-align: center;
-  position: relative;
-  transition: transform 0.8s ease-in-out;
-}
+// .container {
+//   background-color: #99B4BF;
+//   padding: 40px;
+//   margin: 0;
+//   border-radius: 15px;
+//   width: 80%;
+//   text-align: center;
+//   position: relative;
+//   transition: transform 0.8s ease-in-out;
+// }
 
 .btn-primary {
   border-radius: 50px;
-  background-color: #2D4B73;
-  color: rgb(211, 211, 211);
-  padding: 12px 24px;
+  background-color: #2da6bc;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
   border: none;
-  font-size: 18px;
+  font-size: 10px;
   cursor: grabbing;
   text-transform: uppercase;
   font-weight: bold;
   transition: all 0.5s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   position: relative;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
@@ -100,7 +108,7 @@ body {
 
 .title-header {
   font-size: 3.5rem;
-  font-weight: 900;
+  font-weight: bold;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -235,12 +243,20 @@ body {
 }
 
 .card {
+  color: #ffffff;
   height: 100%;
   border-radius: 50px;
-  background: linear-gradient(135deg, rgb(0, 255, 214) 0%, rgb(8, 226, 96) 100%);
   transition: all 0.5s ease-in-out;
   transform-style: preserve-3d;
   box-shadow: rgba(5, 71, 17, 0) 40px 50px 25px -40px, rgba(5, 71, 17, 0.2) 0px 25px 25px -5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: auto;
+  width: 60%;
+  max-width: 600px;
+  border: 2px solid rgba(211, 211, 211, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 8px rgba(11, 199, 232, 0.9);
+  padding: 20px;
 }
 
 .glass {

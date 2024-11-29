@@ -1,18 +1,19 @@
 <%= simple_form_for(@passport) do |f| %>
   <div class="form-group">
-    <%= f.input :title, label: "Passport Title" %>
+    <%= f.input :title, placeholder:"Passport Title", label:false %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :price,placeholder:"Price", label:false %>
   </div>
   <div class="form-group">
-    <%= f.input :description, label: "Description" %>
+    <%= f.input :address, input_html: {data: {address_autocomplete_target: "Address"}}, wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}, placeholder:"Address", label:false%>
   </div>
   <div class="form-group">
-    <%= f.input :price, label: "Price" %>
+    <%= f.input :description,placeholder:"Description here", label:false %>
   </div>
   <div class="form-group">
-    <%= f.input :address, input_html: {data: {address_autocomplete_target: "address"}}, wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
-  </div>
-  <div class="form-group">
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label:false %>
   </div>
   <div class="form-group">
     <%= f.button :submit, "Save Passport", class: "btn btn-primary" %>
