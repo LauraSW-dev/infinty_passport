@@ -52,6 +52,13 @@ class PassportsController < ApplicationController
     end
   end
 
+  def destroy
+    @passport = Passport.find(params[:id])
+    @passport.destroy
+    # No need for app/views/passports/destroy.html.erb
+    redirect_to passports_path, status: :see_other
+  end
+
   private
 
   def passport_params

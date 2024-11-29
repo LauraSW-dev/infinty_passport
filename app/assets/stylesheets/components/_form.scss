@@ -13,5 +13,39 @@ body {
   text-shadow: 1px 1px 3px rgba(20, 76, 230, 0.7);
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Centers content vertically if needed */
+  flex-direction: column;
+  /* Centers content vertically if needed */
+}
+
+
+/* Keeping .background-blur styles as is */
+.background-blur {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: auto;
+  width: 60%;
+  max-width: 600px;
+  border-radius: 30px;
+  border: 2px solid rgba(211, 211, 211, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 8px rgba(11, 199, 232, 0.9);
+  padding: 20px;
+}
+
+.formulaire {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #3498db;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  box-shadow: 0 8px 16px rgba(13, 152, 217, 0.3);
 }
