@@ -9,11 +9,11 @@
 #   end
 # db/seeds.rb
 
-# 1. Clean the database 🗑️
-# puts "Cleaning database..."
-# Booking.destroy_all
-# User.destroy_all
-# Passport.destroy_all
+1. Clean the database 🗑️
+puts "Cleaning database..."
+Booking.destroy_all
+User.destroy_all
+Passport.destroy_all
 
 # # 3. Create users 👤
 # puts "Creating users..."

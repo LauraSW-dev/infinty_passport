@@ -14,19 +14,10 @@ class PassportsController < ApplicationController
       {
         lat: passport.latitude,
         lng: passport.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {passport: passport})
+        info_window_html: render_to_string(partial: "info_window", locals: {passport: passport}),
+        marker_html: render_to_string(partial: "marker", locals: {passport: passport}) # Pass the passport to the partial
       }
     end
-
-    # @passports = Passport.geocoded
-    # @markers = @passports.map do |passport|
-    #   {
-    #     lat: passport.latitude,
-    #     lng: passport.longitude,
-    #     info_window_html: render_to_string(partial: "info_window", locals: {passport: passport}),
-    #     marker_html: render_to_string(partial: "marker")
-    #   }
-    # end
   end
 
   def show

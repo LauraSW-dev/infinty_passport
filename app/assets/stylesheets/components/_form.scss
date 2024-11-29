@@ -1,0 +1,60 @@
+body {
+  background-image: url("https://plus.unsplash.com/premium_photo-1661962432490-6188a6420a81?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover; /* Ensures the background covers the entire screen */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  min-height: 100vh; /* Ensures the body always takes up at least the full viewport height */
+  overflow-x: hidden; /* Disables horizontal scrolling */
+  overflow-y: auto; /* Allows vertical scrolling */
+  text-align: center; /* Centers text */
+  font-size: 20px;
+  color: aliceblue;
+  text-shadow: 1px 1px 3px rgba(20, 76, 230, 0.7);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Centers content vertically if needed */
+}
+
+/* Keeping .background-blur styles as is */
+.background-blur {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: auto;
+  width: 60%;
+  max-width: 600px;
+  border-radius: 30px;
+  border: 2px solid rgba(211, 211, 211, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 8px rgba(11, 199, 232, 0.9);
+  padding: 20px;
+}
+
+.formulaire {
+  display: flex;
+  justify-content: center;
+}
+
+.container-form {
+  z-index: 1;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  background-color: #3498db;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  box-shadow: 0 8px 16px rgba(13, 152, 217, 0.3);
+}
