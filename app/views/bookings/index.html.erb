@@ -1,20 +1,45 @@
-<h1>Bookings</h1>
+<h1 class="m-5">Bookings</h1>
 <% @bookings.each do |booking| %>
-<div class="card">
-  <%= booking.user.email %>
-  <%= booking.passport.title %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
-
-  <% if booking.status == "pending" %>
-  <%= button_to "Approve", approve_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-success" %>
-  <%= button_to "Reject", reject_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-danger" %>
-
-    <% else %>
-      <span class="badge" <%= booking.status == 'approved' ? 'badge-success' : 'badge-danger' %>>
-        <%# <%= booking.status.capitalize %> %>
-      </span>
-    <% end %>
-</div>
-
+  <div class="bookings-Status">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Emails</th>
+          <th scope="col">Passport_Title</th>
+          <th scope="col">start_date</th>
+          <th scope="col">End_date</th>
+          <th scope="col">status</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr>
+          <td>
+            <%= booking.user.email %>
+          </td>
+          <td>
+            <%= booking.passport.title %>
+          </td>
+          <td>
+            <%= booking.start_date %>
+          </td>
+          <td>
+            <%= booking.end_date %>
+          </td>
+          <td>
+            <% if booking.status == "pending" %>
+              <%= button_to "Approve", approve_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-success" %>
+              <%= button_to "Reject", reject_passport_booking_path(passport_id: booking.passport.id, id: booking.id), method: :patch, remote: true, class: "btn btn-danger" %>
+            <% else %>
+              <span class="badge" <%= booking.status == 'approved' ? 'badge-success' : 'badge-danger' %>>
+                <%= booking.status.capitalize %>
+              </span>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 <% end %>
+<div class="container">
+  <%= link_to "Book a passport", new_passport_booking_path, class:"btn btn-primary" %>
+</div>
