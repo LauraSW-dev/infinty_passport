@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://plus.unsplash.com/premium_photo-1661962432490-6188a6420a81?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-image: url("https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover; /* Ensures the background covers the entire screen */
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Prevents repeating the image */
@@ -13,8 +13,10 @@ body {
   text-shadow: 1px 1px 3px rgba(20, 76, 230, 0.7);
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Centers content vertically if needed */
+  flex-direction: column;
+  /* Centers content vertically if needed */
 }
+
 
 /* Keeping .background-blur styles as is */
 .background-blur {
@@ -32,17 +34,6 @@ body {
 .formulaire {
   display: flex;
   justify-content: center;
-}
-
-.container-form {
-  z-index: 1;
-}
-
-.card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn {

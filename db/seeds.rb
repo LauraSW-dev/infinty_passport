@@ -9,7 +9,6 @@
 #   end
 # db/seeds.rb
 
-
 puts "Cleaning database..."
 Booking.destroy_all
 User.destroy_all
@@ -64,9 +63,9 @@ Booking.destroy_all
 
 # 1. Create users
 puts "Creating users..."
-user1 = User.create!(email: "laura@gmaıl.com", password: "password")
-user2 = User.create!(email: "revyll@gmaıl.com", password: "password")
-user3 = User.create!(email: "mike@gmaıl.com", password: "password")
+user1 = User.create!(email: "laura@gmail.com", password: "password")
+user2 = User.create!(email: "revyll@gmail.com", password: "password")
+user3 = User.create!(email: "mike@gmail.com", password: "password")
 puts "Created #{User.count} users."
 
 # 2. Create the passports
