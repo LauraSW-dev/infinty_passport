@@ -1,58 +1,72 @@
+/* Global Styles */
 body {
-  background: #fff;
-  font-family: 'Poppins', sans-serif;
-  color: #13294b;
+  background-color: #fff;
+  font-family: $body-font;
+  color: #ffffff;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
 
+/* Layout Styles */
 .main-container {
   padding: 16px;
   width: 100%;
-  position: relative;
   transition: transform 0.8s ease-in-out;
 }
 
 h1.text-centertitle {
-  text-align: center;
-  font-size: 2rem;
-  color: #13294b;
+  margin-top: 16px;
+  color: white !important;
 }
 
+/* Cards and Map Section */
 .cards-map {
   display: grid;
   grid-template-columns: 7fr 3fr;
+  gap: 16px;
   margin: 16px 0;
 }
 
 .map {
-  padding-right: 16px;
   position: sticky;
-  top: 16px; /* The map will stick 16px from the top */
-  align-self: flex-start;
+  top: 16px;
   border-radius: 8px;
   z-index: 10;
 }
 
+.map-container {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+#mapcont {
+  border-radius: 8px;
+  width: 100%;
+  height: 600px;
+}
+
+/* Passports Section with Glassmorphism */
 .passports {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.6px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
 }
 
 .passport {
   padding: 16px;
-  border: solid 1px #327d81;
-  background-color: #f4f6ef;
-  border-radius: 8px;
-  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  background: rgba(82, 198, 198, 0.201); /* Semi-transparent background */
+  backdrop-filter: blur(12px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(12px); /* Frosted glass for Safari */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .passport:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .passport .content {
@@ -67,7 +81,7 @@ h1.text-centertitle {
 
 .passport .text {
   font-size: 1rem;
-  color: #327d81;
+  color: #fff;
 }
 
 .passport .bottom {
@@ -88,9 +102,10 @@ h1.text-centertitle {
   background-color: #327d81;
 }
 
+/* Form Styles */
 #buttonsearch .form-control {
   background-color: #f4f6ef;
-  border: solid 1px #327d81;
+  border: 1px solid #327d81;
   color: #13294b;
   border-radius: 4px;
 }
@@ -118,23 +133,4 @@ h1.text-centertitle {
 
 #buttonsearch .btn-success:hover {
   background-color: #13294b;
-}
-
-.map-container {
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-#mapcont {
-  border-radius: 8px;
-  width: 100%;
-  height: 600px;
-}
-
-#greencard {
-  padding: 16px;
-}
-
-.row {
-  margin: 0;
 }
