@@ -8,6 +8,11 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color:#ffffff ;
+}
+
 /* Layout Styles */
 .main-container {
   padding: 16px;
@@ -15,9 +20,41 @@ body {
   transition: transform 0.8s ease-in-out;
 }
 
+.border-and-radius {
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  background: rgba(82, 198, 198, 0.201); /* Semi-transparent background */
+  backdrop-filter: blur(12px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(12px); /* Frosted glass for Safari */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: fit-content;
+  padding-bottom: 32px;
+}
+
 h1.text-centertitle {
   margin-top: 16px;
-  color: white !important;
+  color: rgb(239, 238, 238);
+  animation: fadeGlow 3s ease-in-out infinite;
+}
+
+/* Neon Glow and Fade-in/out Animation */
+@keyframes fadeGlow {
+  0% {
+    color: rgb(239, 238, 238); /* Original color */
+    text-shadow: 0 0 5px #32cd32, 0 0 10px #32cd32, 0 0 15px #32cd32, 0 0 20px #32cd32; /* Neon Green Glow */
+    opacity: 0.7;
+  }
+  50% {
+    color: rgb(239, 238, 238); /* Original color */
+    text-shadow: 0 0 10px #32cd32, 0 0 20px #32cd32, 0 0 30px #32cd32, 0 0 40px #32cd32; /* Stronger Neon Green Glow */
+    opacity: 1; /* Full opacity */
+  }
+  100% {
+    color: rgb(239, 238, 238); /* Original color */
+    text-shadow: 0 0 5px #32cd32, 0 0 10px #32cd32, 0 0 15px #32cd32, 0 0 20px #32cd32; /* Neon Green Glow */
+    opacity: 0.7;
+  }
 }
 
 /* Cards and Map Section */
@@ -67,7 +104,8 @@ h1.text-centertitle {
 
 .passport:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  box-shadow: 0px 8px 30px 10px rgba(50, 125, 129, 0.6); /* Glow spread out with a larger blur and spread radius */
+  border: 1px solid #6dc7cb; /* Brighter shade for the border */
 }
 
 .passport .content {
@@ -90,17 +128,44 @@ h1.text-centertitle {
   text-align: center;
 }
 
-.passport .btn-primary {
-  background-color: #13294b;
+/* Button Styles with Hover Text Change for .btn-success */
+.passport .btn-success {
+  background-color: #327d81;
   color: #fff;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative; /* Required for positioning the ::after element */
+  overflow: hidden; /* Ensures no text overflow */
 }
 
-.passport .btn-primary:hover {
-  background-color: #327d81;
+.passport .btn-success::after {
+  content: "Make one now!";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.passport .btn-success:hover {
+  background-color: #13294b;
+}
+
+.passport .btn-success:hover span {
+  visibility: hidden; /* Hides the original text */
+  opacity: 0; /* Fully hides it for smooth effect */
+}
+
+.passport .btn-success:hover::after {
+  opacity: 1; /* Shows the new text */
 }
 
 /* Form Styles */
@@ -134,4 +199,92 @@ h1.text-centertitle {
 
 #buttonsearch .btn-success:hover {
   background-color: #13294b;
+}
+
+/* Container for Card */
+.ncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Glassmorphism Card */
+.nice {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for the glassmorphism */
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+/* Hover Effect on Card */
+.nice:hover {
+  transform: translateY(-5px); /* Card lift effect on hover */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Text Styling */
+.nice p {
+  margin: 8px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Optional: Card Heading Style (if you want to add headings inside the card) */
+.nice h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #13294b;
+  margin-bottom: 10px;
+}
+
+.nice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.nice img {
+  /* Apply the swirl animation */
+  animation: swirl 10s linear infinite;
+  border-radius: 8px; /* Optional: rounded corners for the image */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Keyframes for swirl effect */
+@keyframes swirl {
+  0% {
+    transform: rotate(0deg) scale(1); /* Starting state */
+  }
+  25% {
+    transform: rotate(0.5deg) scale(1.05); /* Slight rotation and scaling */
+  }
+  50% {
+    transform: rotate(0.5deg) scale(1); /* Rotate half a turn */
+  }
+  75% {
+    transform: rotate(0.5deg) scale(1.05); /* Slight rotation and scaling */
+  }
+  100% {
+    transform: rotate(0.5deg) scale(1); /* Full rotation */
+  }
+}
+
+
+.title-header{
+
+  animation: swirl 10s linear infinite;
+  border-radius: 8px; /* Optional: rounded corners for the image */
+  transition: transform 0.5s ease-in-out;
+
 }
