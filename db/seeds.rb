@@ -58,6 +58,10 @@ Passport.destroy_all
 
 require "open-uri"
 
+User.destroy_all
+Passport.destroy_all
+Booking.destroy_all
+
 # 1. Create users
 puts "Creating users..."
 user1 = User.create!(email: "laura@gmaıl.com", password: "password")

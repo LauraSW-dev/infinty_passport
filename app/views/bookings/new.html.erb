@@ -1,16 +1,12 @@
-<h1>Make a Booking now!</h1>
-
 <%= simple_form_for @booking do |f| %>
   <div>
-    <%= f.input :status, collection: ['pending', 'confirmed', 'cancelled'], prompt: 'Select Status' %>
+    <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "flatpickr" } } %>
   </div>
 
   <div>
-    <%= f.input :start_date, as: :date %>
-  </div>
-
-  <div>
-    <%= f.input :end_date, as: :date %>
+    <%= f.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
   </div>
 
   <div>
