@@ -1,9 +1,16 @@
 <%# <%=@booking.status%>
-<div class="container">
+<div class="ncontainer">
 <div class="nice">
+<%# <%= @booking.passport_id %>
 <%=@booking.user.email %>
-<%= @booking.passport_id %>
+<h2>Has Booked The</h2>
+<%=  @booking.passport.title%>
 <%= @booking.start_date %>
 <%= @booking.end_date %>
+<% @passport.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 250, crop: :fill %>
+<% end %>
+
+
 </div>
 </div>
